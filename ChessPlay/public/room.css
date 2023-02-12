@@ -1,0 +1,124 @@
+html{
+    background-image: url("assets/images/signupbackground.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+body {
+    color: #12186a; 
+    text-align: center;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+h1 {
+  font-size: 6em;
+  text-shadow: white 2px 2px;
+  margin-top: 100px;
+}
+
+select{
+
+display:flex;
+flex-direction: column;
+
+
+}
+
+button{
+  background-color: #12186a; /* Light button color */
+  color: wheat; /* Dark text color */
+  padding: 10px 20px;
+  font-size: 1.2em;
+  margin: 10px;
+  border: solid #12186a;
+  box-shadow: #040618 1px 2px;
+  border-radius: 20px;
+  
+}
+
+button:hover{
+  cursor: pointer;
+}
+
+#buttons{
+  display:flex;
+  flex-direction: column;
+  margin-top: 200px;
+}
+#ongoingGames{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#ongoingGames select{
+  margin-bottom: 50px;
+}
+
+#gameRoom{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("assets/images/blankbackground.jpg");
+  gap: 100px;
+}
+
+#board{
+  width: 726px;
+  height:726px;
+  display:flex;
+  flex-wrap: wrap;
+  background-image:url(assets/images/board.png);
+  background-repeat: no-repeat;
+}
+.square{
+  height: 90px;
+  width: 90px;
+}
+.piece{
+  height: 90px;
+  width: 90px;
+}
+
+#gameButtons{
+  background-image: url(assets/images/blankbackground.jpg);
+}
+#chat{
+  display:flex;
+  flex-direction: column;
+  gap: 30px;
+}
+#messages{
+  background-color: white;
+  height: 300px;
+  width: 500px;
+  overflow-y: scroll;
+  overflow-wrap: break-word;
+}
+#selfMessage{
+  color: blue;
+  text-align: left;
+}
+#opponentMessage{
+  color:red;
+  text-align: left;
+}
+input{
+  width: 500px;
+  height: 50px;
+  font-size: 20px;
+}
+#upgradePawn{
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
