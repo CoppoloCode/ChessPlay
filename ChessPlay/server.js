@@ -3,6 +3,18 @@ const app = express();
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
 
+const mysql = require('mysql');
+const con = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: '',
+  database: 'chessplay'
+});
+
+con.connect((err) => {
+    if (err) throw err;
+    console.log('Connected!');
+});
 
 app.set('view engine' , 'ejs');
 app.use(express.static('public'));
@@ -245,6 +257,6 @@ function removeGameFromDB(gameId){
 
 
 
-server.listen(3000);
+server.listen(process.env.PORT);
 
 
