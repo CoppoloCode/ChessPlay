@@ -39,11 +39,10 @@ io.ongoingGames = new Map();
 
 getGamesFromDB();
 
-
 io.on('connection', socket => {
 
     socket.emit('open');
-    
+
     socket.on('connected', (lobbyId, userId, userName) =>{
 
         while(io.users.has(userName)){
