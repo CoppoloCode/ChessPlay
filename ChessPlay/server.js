@@ -200,15 +200,18 @@ function sendLobbyList(lobbyId){
 function getGamesFromDB () {
 
     return con.query('SELECT * FROM games', (err,rows) => {
+
         if(err){
             console.log(err);
-        } 
-    
-        if(rows.length > 0){
-            for(i = 0; i < rows.length; i++){
-                io.ongoingGames.set(rows[i]['id'], [rows[i]['challenger'], rows[i]['challenged'], rows[i]['positions'], rows[i]['pawnsMoved'], rows[i]['whosTurn']]);
-            }
+           
+        }else{ 
             
+            if(rows.length > 0){
+                for(i = 0; i < rows.length; i++){
+                    io.ongoingGames.set(rows[i]['id'], [rows[i]['challenger'], rows[i]['challenged'], rows[i]['positions'], rows[i]['pawnsMoved'], rows[i]['whosTurn']]);
+                }
+                
+            }
         }
         console.log(io.ongoingGames);
         
