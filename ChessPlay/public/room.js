@@ -13,7 +13,7 @@ let inGame = false;
 let gameRoomId;
 let Opponents = new Map();
 
-myPeer.on('open',() => {
+socket.on('open',() => {
     if(socket.id == null){
         location.assign('https://chessplay.herokuapp.com/'+ userName);
     }
