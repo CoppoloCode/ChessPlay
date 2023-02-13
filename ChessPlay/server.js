@@ -281,6 +281,6 @@ function removeGameFromDB(gameId){
 
 
 
-server.listen(`0.0.0.0:$PORT`);
+server.listen($PORT);
 
 
