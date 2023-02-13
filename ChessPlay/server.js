@@ -11,7 +11,7 @@ const con = mysql.createConnection({
   database: 'chessplay'
 });
 
-response.writeHead(200, {"Content-Type": "text/plain"});
+
 
 con.connect((err) => {
     if (err) throw err;
