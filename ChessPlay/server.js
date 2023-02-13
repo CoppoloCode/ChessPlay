@@ -200,7 +200,9 @@ function sendLobbyList(lobbyId){
 function getGamesFromDB () {
 
     return con.query('SELECT * FROM games', (err,rows) => {
-        if(err) throw err;
+        if(err){
+            console.log(err);
+        } 
     
         if(rows.length > 0){
             for(i = 0; i < rows.length; i++){
@@ -222,7 +224,9 @@ function addGametoDB(gameRoomId, challenger, challenged, gameState, pawnsMoved, 
     io.ongoingGames.set(gameRoomId, [challenger, challenged, gameState, pawnsMoved, whosTurn]);
 
     con.query(sql, values, (err,rows) => {
-        if(err) throw err;
+        if(err){
+            console.log(err);
+        } 
     
         console.log("added game to db");
     
@@ -237,7 +241,9 @@ function updateGame(gameId, board, pawnsData, whosTurn){
     let values = [board,pawnsData,whosTurn,gameId];
 
     con.query(sql, values, (err,rows) => {
-        if(err) throw err;
+        if(err){
+            console.log(err);
+        } 
     
         console.log("game updated");
     
@@ -251,7 +257,9 @@ function removeGameFromDB(gameId){
     io.ongoingGames.delete(gameId);
 
     con.query(sql, values, (err,rows) => {
-        if(err) throw err;
+        if(err){
+            console.log(err);
+        } 
     
         console.log("game removed from db");
     
