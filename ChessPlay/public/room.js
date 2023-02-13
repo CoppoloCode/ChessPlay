@@ -1,7 +1,8 @@
-const socket = io('/');
+const socket = io('https://chessplay.herokuapp.com');
 const myPeer = new Peer(undefined,{
-    host: '/',
-    port: '3001'
+    host: 'https://chessplay.herokuapp.com',
+    port: '443',
+    secure: 'true',
 
     
 })

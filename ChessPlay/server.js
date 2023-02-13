@@ -16,8 +16,10 @@ const con = mysql.createConnection({
 con.connect((err) => {
     if (err){
         console.log(err);
-    } 
-    console.log('Connected!');
+    }else{
+        console.log('Connected!');
+    }
+    
 });
 
 app.set('view engine' , 'ejs');
