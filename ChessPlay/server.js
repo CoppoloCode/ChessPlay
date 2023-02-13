@@ -41,7 +41,7 @@ getGamesFromDB();
 
 
 io.on('connection', socket => {
-
+    console.log(io.users);
     socket.on('connected', (lobbyId, userId, userName) =>{
 
         while(io.users.has(userName)){
@@ -49,7 +49,7 @@ io.on('connection', socket => {
             io.to(userId).emit('new-guest-name', userName);
         }
         io.users.set(userName, userId);
-        console.log(io.users);
+        
 
         socket.on('join-lobby', (userName, userId) => {
             socket.join(lobbyId);
