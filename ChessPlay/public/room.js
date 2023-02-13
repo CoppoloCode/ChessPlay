@@ -15,7 +15,7 @@ let Opponents = new Map();
 
 myPeer.on('open',() => {
     if(socket.id == null){
-        location.assign('http://localhost:3000/'+ userName);
+        location.assign('https://chessplay.herokuapp.com/'+ userName);
     }
     socket.emit('connected', LOBBY_ID, socket.id, userName);
     socket.emit('join-lobby', userName, socket.id);
