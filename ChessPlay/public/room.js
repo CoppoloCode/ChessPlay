@@ -18,12 +18,12 @@ socket.on('open',() => {
         location.assign('https://chessplay-production.up.railway.app/'+ userName);
     }
     socket.emit('connected', LOBBY_ID, socket.id, userName);
-    socket.emit('join-lobby', userName, socket.id);
-    setupLobby();
 })
 
 socket.on('user-connected', user => {
     console.log("User connected: " + user);
+    socket.emit('join-lobby', userName, socket.id);
+    setupLobby();
 })
 
 socket.on('new-guest-name', newName => {

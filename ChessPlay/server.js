@@ -43,17 +43,18 @@ io.on('connection', socket => {
 
     socket.on('connected', (lobbyId, userId, userName) =>{
 
+        
         while(io.users.has(userName)){
             userName = 'guest-' + Math.floor(Math.random() * 1000);
             io.to(userId).emit('new-guest-name', userName);
         }
         io.users.set(userName, userId);
-        
+        socket.emit('user-connected', userName);
 
         socket.on('join-lobby', (userName, userId) => {
             socket.join(lobbyId);
             io.usersInLobby.set(userName, userId);
-            socket.to(lobbyId).emit('user-connected', userName);
+            
             sendLobbyList(lobbyId);
             sendGameList(userName);
 
