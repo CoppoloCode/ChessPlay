@@ -5,9 +5,9 @@ const io = require('socket.io')(server);
 
 const mysql = require('mysql');
 const con = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '',
+  host: 'dpg-cjrqnb5m702s73evk0o0-a',
+  user: 'chessplay_user',
+  password: 'VAq3iBP9Vvv4N9ojnTBwuF1vXzlfdvi2',
   database: 'chessplay'
 });
 
