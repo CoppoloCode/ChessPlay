@@ -15,7 +15,7 @@ let Opponents = new Map();
 
 socket.on('open',() => {
     if(socket.id == null){
-        location.assign('https://chessplay-production.up.railway.app/'+ userName);
+        location.assign('https://chess-play.onrender.com/'+ userName);
     }
     socket.emit('connected', LOBBY_ID, socket.id, userName);
 })
