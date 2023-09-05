@@ -1,6 +1,6 @@
-const socket = io('https://chessplay-production.up.railway.app');
+const socket = io('https://chess-play.onrender.com/');
 const myPeer = new Peer(undefined,{
-    host: 'https://chessplay-production.up.railway.app',
+    host: 'https://chess-play.onrender.com/',
     port: '443',
     secure: 'true',
 
